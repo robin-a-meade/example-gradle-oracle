@@ -7,9 +7,9 @@ Before trying this gradle example, make sure you have the [maven example](https:
 
 ## METHOD 1 - credentials in build.gradle
 
-Edit build.gradle and scroll down to the **METHOD 1** section.
+Edit `build.gradle` and scroll down to the **METHOD 1** section.
 
-Uncomment the `credentials` block and enter your maven.oracle.com credentials.
+Uncomment the `credentials` block and enter your Oracle Account credentials.
 
 ```
 ./gradlew resolveDependencies
@@ -27,7 +27,7 @@ See:
   `github.com/robin-a-meade/example-maven-oracle`  
   an example of how to use the Oracle Maven Repo with maven
 
-Edit build.gradle
+Edit `build.gradle`.
 
 Uncomment the plugin at the top.
 
