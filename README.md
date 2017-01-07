@@ -21,13 +21,14 @@ already been downloaded).
 
 ### Prerequisites
 
-Before trying this method, I advise you try it with straight maven first. See:
+Before trying this method, I advise you to try it with straight maven first. See:
 
 - [example-maven-oracle](https://github.com/robin-a-meade/example-maven-oracle)  
   `github.com/robin-a-meade/example-maven-oracle`  
   an example of how to use the Oracle Maven Repo with maven
 
-That way you'll know that your `~/.m2/settings.xml` and, if opting to encrypt password, `settings-security.xml`, are already properly set up and confirmed to work with maven.
+That way you'll know that your `~/.m2/settings.xml` and, if opting to encrypt
+password, `settings-security.xml`, are properly set up.
 
 
 ### Instructions
@@ -38,9 +39,11 @@ Uncomment the plugin at the top.
 
 Scroll down to the **METHOD 2** section.
 
-Verify that the `name` property matches the server id you configured for the Oracle maven repo in your `~/.m2/settings.xml`.
+Verify that the `name` property matches the server id you configured for the
+Oracle maven repo in your `~/.m2/settings.xml`.
 
-Then, as above, test if gradle can resolve dependencies from the Oracle Maven repository:
+Then, as above, test if gradle can resolve dependencies from the Oracle Maven
+repository:
 
 ```
 ./gradlew resolveDependencies
