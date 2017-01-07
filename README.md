@@ -35,7 +35,7 @@ password, `settings-security.xml`, are properly set up.
 
 Edit `build.gradle`.
 
-Uncomment the plugin at the top.
+Uncomment the 'net.lingquica.maven-settings' plugin at the top.
 
 Scroll down to the **METHOD 2** section.
 

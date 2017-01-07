@@ -29,18 +29,21 @@ repositories {
 
     maven {
 
-       // WORKAROUND
+       // PROBLEM
        // ----------
     
        // The url for the Oracle.com maven repo is supposed to be: 
        //
        //    https://maven.oracle.com
        //
-       // But gradle can't handle the redirects needed by the SSO mechanism
-       // used for this repo.
-       //
-       // A workaround [1] is to use this URL:
+       // But gradle can't handle the redirects needed by the realm-based SSO
 
+
+       // WORKAROUND
+       // ----------
+
+       // A workaround [1] is to use this URL:
+    
        url "https://www.oracle.com/content/secure/maven/content"
 
        // [1]: https://groups.google.com/forum/#!topic/gradle-dev/G8X_41lOIlU
@@ -70,7 +73,7 @@ repositories {
        // NOTES:
        //
        // 1) you must set the 'name' property. And its value must match the
-       //    'id' you used in the 'server' config in you ~/.m2/settings.xml
+       //    'id' you used in the 'server' config in your ~/.m2/settings.xml
        //
        // 2) include the 'net.lingquica.maven-settings' plugin, as shown at the
        //    top of this file. This plugin allows your gradle project to use
