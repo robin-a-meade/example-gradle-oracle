@@ -2,14 +2,13 @@ An example project illustrating how to use [Oracle's maven repo](https://maven.o
 
 # Instructions
 
-Before trying this gradle example, make sure you have the [maven example](https://github.com/robin-a-meade/example-maven-oracle) working.
-
-
 ## METHOD 1 - credentials in build.gradle
 
 Edit `build.gradle` and scroll down to the **METHOD 1** section.
 
 Uncomment the `credentials` block and enter your Oracle Account credentials.
+
+Then test if gradle can resolve dependencies from the Oracle Maven repository:
 
 ```
 ./gradlew resolveDependencies
@@ -20,12 +19,18 @@ already been downloaded).
 
 ## METHOD 2 - use maven's settings.xml and optional encryption
 
-Your `~/.m2/settings.xml` and, if opting to encrypt password, `settings-security.xml`, should already be set up and confirmed to work with maven.
+### Prerequisites
 
-See:
+Before trying this method, I advise you try it with straight maven first. See:
+
 - [example-maven-oracle](https://github.com/robin-a-meade/example-maven-oracle)  
   `github.com/robin-a-meade/example-maven-oracle`  
   an example of how to use the Oracle Maven Repo with maven
+
+That way you'll know that your `~/.m2/settings.xml` and, if opting to encrypt password, `settings-security.xml`, are already properly set up and confirmed to work with maven.
+
+
+### Instructions
 
 Edit `build.gradle`.
 
