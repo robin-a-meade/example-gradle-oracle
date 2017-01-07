@@ -2,7 +2,7 @@ An example project illustrating how to use [Oracle's maven repo](https://maven.o
 
 # Instructions
 
-Before trying this gradle example, make sure you have the maven example working.
+Before trying this gradle example, make sure you have the [maven example](https://github.com/robin-a-meade/example-maven-oracle) working.
 
 
 ## METHOD 1 - credentials in build.gradle
@@ -26,7 +26,6 @@ See:
 - [example-maven-oracle](https://github.com/robin-a-meade/example-maven-oracle)  
   `github.com/robin-a-meade/example-maven-oracle`  
   an example of how to use the Oracle Maven Repo with maven
-
 
 Edit build.gradle
 
