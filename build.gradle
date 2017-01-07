@@ -1,0 +1,88 @@
+plugins {
+  id 'java'
+  // id "net.linguica.maven-settings" version "0.5" // uncomment this for METHOD 2
+}
+
+// Gradle equivalent of maven goal: dependency:resolve
+// http://jdpgrailsdev.github.io/blog/2014/10/28/gradle_resolve_all_dependencies.html
+// You can this task to test whether your oracle dependencies get properly downloaded:
+//
+//   $ ./gradlew resolveDependencies
+//
+// The jars should get downloaded to:
+// ~/.gradle/caches/modules-2/files-2.1/com.oracle.jdbc
+task resolveDependencies {
+    doLast {
+        project.rootProject.allprojects.each { subProject ->
+            subProject.buildscript.configurations.each { configuration ->
+                configuration.resolve()
+            }
+            subProject.configurations.each { configuration ->
+                configuration.resolve()
+            }
+        }
+    }
+}
+
+repositories {
+    jcenter()
+
+    maven {
+
+       // WORKAROUND
+       // ----------
+    
+       // The url for the Oracle.com maven repo is supposed to be: 
+       //
+       //    https://maven.oracle.com
+       //
+       // But gradle can't handle the redirects needed by the SSO mechanism
+       // used for this repo.
+       //
+       // A workaround [1] is to use this URL:
+
+       url "https://www.oracle.com/content/secure/maven/content"
+
+       // [1]: https://groups.google.com/forum/#!topic/gradle-dev/G8X_41lOIlU
+
+
+       // METHOD 1 - plain-text credentials in build file
+       // ---------------------------------------------------------
+
+       // You don't need to set the 'name' property if using this method.
+
+
+       // Uncomment this credentials block and enter Oracle Account credentials
+
+       //credentials {
+       //  username '<email address>'
+       //  password '<password>'
+       //}
+
+
+       // METHOD 2 - credentials in .m2/settings.xml, optionally encrypted
+       // ----------------------------------------------------------------
+
+       // This method uses maven's settings.xml and settings-security.xml, as
+       // described here:
+       // https://blogs.oracle.com/dev2dev/entry/how_to_get_oracle_jdbc
+       // 
+       // NOTES:
+       //
+       // 1) you must set the 'name' property. And its value must match the
+       //    'id' you used in the 'server' config in you ~/.m2/settings.xml
+       //
+       // 2) include the 'net.lingquica.maven-settings' plugin, as shown at the
+       //    top of this file. This plugin allows your gradle project to use
+       //    maven's settings.xml to store repository authentication 
+       //    credentials, optionally encrypted.
+
+       name "maven.oracle.com" // must match server id in settings.xml !
+
+    }
+}
+
+dependencies {
+    compile 'com.oracle.jdbc:ojdbc7:12.1.0.2'
+}
+
