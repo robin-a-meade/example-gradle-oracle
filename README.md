@@ -48,9 +48,9 @@ Then, as above, test if gradle can resolve dependencies from the Oracle Maven re
 
 # See also
 
-- [example-gradle-oracle](https://github.com/robin-a-meade/example-gradle-oracle)  
-  `github.com/robin-a-meade/example-gradle-oracle`  
-  an example of how to use the Oracle Maven Repo with gradle
+- [example-maven-oracle](https://github.com/robin-a-meade/example-maven-oracle)  
+  `github.com/robin-a-meade/example-maven-oracle`  
+  an example of how to use the Oracle Maven Repo with maven
 - [How to add ojdbc7 to Java web app by Gradle?](http://stackoverflow.com/questions/37783669/how-to-add-ojdbc7-to-java-web-app-by-gradle)  
   `stackoverflow.com/questions/37783669`
 - [Can I use the Maven repo with Gradle?](https://community.oracle.com/thread/3899544)  
