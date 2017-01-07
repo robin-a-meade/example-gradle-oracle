@@ -5,12 +5,14 @@ plugins {
 
 // Gradle equivalent of maven goal: dependency:resolve
 // http://jdpgrailsdev.github.io/blog/2014/10/28/gradle_resolve_all_dependencies.html
-// You can this task to test whether your oracle dependencies get properly downloaded:
+// You can use this task to test whether your oracle dependencies get properly
+// downloaded:
 //
 //   $ ./gradlew resolveDependencies
 //
-// The jars should get downloaded to:
-// ~/.gradle/caches/modules-2/files-2.1/com.oracle.jdbc
+// The Oracle jdbc jars should get downloaded to:
+//
+//   ~/.gradle/caches/modules-2/files-2.1/com.oracle.jdbc
 task resolveDependencies {
     doLast {
         project.rootProject.allprojects.each { subProject ->
